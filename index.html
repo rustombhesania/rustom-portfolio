@@ -26,7 +26,7 @@
     font-family: var(--sans);
     font-weight: 300;
     line-height: 1.7;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   nav {
@@ -37,11 +37,11 @@
     z-index: 100;
     padding: 0 2rem;
     display: flex; align-items: center; justify-content: space-between;
-    height: 56px;
+    height: 60px;
   }
-  .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.05em; }
+  .nav-logo { font-family: var(--mono); font-size: 15px; color: var(--accent); letter-spacing: 0.05em; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a { font-family: var(--mono); font-size: 14px; color: var(--muted); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
   .nav-links a:hover { color: var(--accent); }
 
   section { padding: 6rem 0; }
@@ -64,8 +64,8 @@
   .btn-accent { border-color: var(--accent); color: var(--accent); }
   .btn-accent:hover { background: var(--accent); color: #0d0d0d; }
 
-  .section-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
-  h2 { font-family: var(--mono); font-size: 1.5rem; font-weight: 500; color: var(--text); margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .section-label { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  h2 { font-family: var(--mono); font-size: 1.7rem; font-weight: 500; color: var(--text); margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
 
   .about-text { font-size: 1.05rem; color: var(--muted); max-width: 640px; line-height: 1.9; }
 
@@ -83,12 +83,12 @@
   .project-card:last-child { border-bottom: none; }
   .project-card:hover { background: var(--surface2); }
   .project-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
-  .project-title { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); }
-  .project-year { font-family: var(--mono); font-size: 11px; color: var(--muted); flex-shrink: 0; }
-  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+  .project-title { font-family: var(--mono); font-size: 17px; font-weight: 500; color: var(--text); }
+  .project-year { font-family: var(--mono); font-size: 15px; color: var(--muted); flex-shrink: 0; }
+  .project-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
   .tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.05em; padding: 3px 7px; border: 1px solid var(--border); color: var(--muted); text-transform: uppercase; }
-  .gh-link { font-family: var(--mono); font-size: 11px; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .tag { font-family: var(--mono); font-size: 13px; letter-spacing: 0.05em; padding: 4px 9px; border: 1px solid var(--border); color: var(--muted); text-transform: uppercase; }
+  .gh-link { font-family: var(--mono); font-size: 15px; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .gh-link:hover { border-color: var(--accent); }
 
   /* EXPERIENCE */
@@ -96,27 +96,27 @@
   .exp-item { background: var(--surface); padding: 1.6rem 1.8rem; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 0.5rem 2rem; transition: background 0.2s; }
   .exp-item:last-child { border-bottom: none; }
   .exp-item:hover { background: var(--surface2); }
-  .exp-org { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
-  .exp-role { font-size: 13px; color: var(--accent2); margin-bottom: 0.5rem; }
-  .exp-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-  .exp-date { font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap; text-align: right; padding-top: 3px; }
+  .exp-org { font-family: var(--mono); font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+  .exp-role { font-size: 16px; color: var(--accent2); margin-bottom: 0.5rem; }
+  .exp-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
+  .exp-date { font-family: var(--mono); font-size: 14px; color: var(--muted); white-space: nowrap; text-align: right; padding-top: 3px; }
 
   /* PERSONAL */
   .personal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--border); background: var(--border); }
   .personal-card { background: var(--surface); padding: 1.5rem; transition: background 0.2s; }
   .personal-card:hover { background: var(--surface2); }
-  .personal-icon { font-family: var(--mono); font-size: 13px; color: var(--accent); margin-bottom: 0.6rem; }
-  .personal-title { font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 0.5rem; }
-  .personal-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .personal-icon { font-family: var(--mono); font-size: 15px; color: var(--accent); margin-bottom: 0.6rem; }
+  .personal-title { font-family: var(--mono); font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 0.5rem; }
+  .personal-desc { font-size: 16px; color: var(--muted); line-height: 1.6; }
 
   /* CONTACT */
   .contact-links { display: flex; flex-direction: column; gap: 1rem; }
   .contact-item { display: flex; align-items: center; gap: 1.5rem; }
-  .contact-label { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; width: 80px; flex-shrink: 0; }
-  .contact-val { font-family: var(--mono); font-size: 13px; color: var(--text); text-decoration: none; }
+  .contact-label { font-family: var(--mono); font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; width: 90px; flex-shrink: 0; }
+  .contact-val { font-family: var(--mono); font-size: 15px; color: var(--text); text-decoration: none; }
   .contact-val:hover { color: var(--accent); }
 
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.05em; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.05em; }
 
   @media (max-width: 600px) {
     .personal-grid { grid-template-columns: 1fr; }

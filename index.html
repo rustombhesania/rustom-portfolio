@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rustom Bhesania — Audio AI Researcher & Engineer</title>
+<meta name="theme-color" content="#0d0d0d">
+<meta name="description" content="Rustom Bhesania, audio AI researcher and engineer: speech enhancement, test-time adaptation, music information retrieval.">
+<title>Rustom Bhesania | Audio AI Researcher & Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -97,6 +99,8 @@
   .exp-item:last-child { border-bottom: none; }
   .exp-item:hover { background: var(--surface2); }
   .exp-org { font-family: var(--mono); font-size: 17px; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+  .org-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--muted); transition: color 0.2s, border-color 0.2s; }
+  .org-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
   .exp-role { font-size: 16px; color: var(--accent2); margin-bottom: 0.5rem; }
   .exp-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
   .exp-date { font-family: var(--mono); font-size: 14px; color: var(--muted); white-space: nowrap; text-align: right; padding-top: 3px; }
@@ -118,12 +122,52 @@
 
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.05em; }
 
+  section[id] { scroll-margin-top: 60px; }
+  .nav-links { overflow-x: auto; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { white-space: nowrap; }
+  .project-title, .exp-org { overflow-wrap: anywhere; }
+  .gh-link { overflow-wrap: anywhere; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+  @media (max-width: 900px) {
+    body { font-size: 18px; }
+    section { padding: 4.5rem 0; }
+  }
+
   @media (max-width: 600px) {
+    body { font-size: 17px; }
+    nav { padding: 0 1rem; gap: 1rem; height: 54px; }
+    .nav-logo { font-size: 13px; flex-shrink: 0; }
+    .nav-links { gap: 1.1rem; min-width: 0; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.05em; }
+    section[id] { scroll-margin-top: 54px; }
+    section { padding: 3rem 0; }
+    .container { padding: 0 1.25rem; }
+    #hero { min-height: auto; padding: 6.5rem 0 3.5rem; }
+    .hero-sub { font-size: 1rem; line-height: 1.8; }
+    h2 { font-size: 1.35rem; margin-bottom: 1.6rem; padding-bottom: 0.7rem; }
+    .tree-wrap { padding: 1.1rem 1rem; }
+    .tree { font-size: 12px; line-height: 2; }
+    .project-card { padding: 1.2rem; }
+    .project-header { gap: 0.3rem; }
+    .project-title { font-size: 15px; }
+    .project-year { font-size: 13px; }
+    .project-desc { font-size: 15px; }
+    .tag { font-size: 11px; padding: 3px 7px; }
+    .exp-item { grid-template-columns: 1fr; padding: 1.2rem; }
+    .exp-org { font-size: 15px; }
+    .exp-role { font-size: 15px; }
+    .exp-desc { font-size: 14.5px; }
+    .exp-date { text-align: left; order: -1; font-size: 13px; padding-top: 0; }
     .personal-grid { grid-template-columns: 1fr; }
-    .exp-item { grid-template-columns: 1fr; }
-    .exp-date { text-align: left; }
-    .nav-links { gap: 1rem; }
-    .nav-links a { font-size: 10px; }
+    .personal-card { padding: 1.2rem; }
+    .personal-title { font-size: 15px; }
+    .personal-desc { font-size: 15px; }
+    .contact-item { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+    .contact-label { width: auto; }
+    .contact-val { font-size: 14px; overflow-wrap: anywhere; }
+    .btn { padding: 0.6rem 1.1rem; }
   }
 </style>
 </head>
@@ -133,9 +177,10 @@
   <span class="nav-logo">rb@senpai:~$</span>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
-    <li><a href="#current-research">Current Work</a></li>
+    <li><a href="#current-research">Thesis</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#entrepreneurship">Startups</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -147,7 +192,7 @@
     <h1>Rustom<br><span>Bhesania.</span></h1>
     <p style="font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:0.1em; margin-bottom:1.5rem; margin-top:-0.8rem;">Rustom Firdosh Bhesania</p>
     <p class="hero-sub">
-      I'm driven by building complete solutions in audio AI — from research through deployment.
+      I'm driven by building complete solutions in audio AI, from research through deployment.
       Currently exploring how speech and music processing can solve real problems.
     </p>
     <div class="hero-links">
@@ -168,48 +213,50 @@
 <span class="connector">│</span>
 <span class="connector">├──</span> <span class="branch-label">Speech Processing</span>
 <span class="connector">│   ├──</span> <span class="leaf">Speech Enhancement</span>
+<span class="connector">│   ├──</span> <span class="leaf">Test-Time Adaptation</span>
 <span class="connector">│   ├──</span> <span class="leaf">Microphone Array Processing</span>
 <span class="connector">│   ├──</span> <span class="leaf">ASR &amp; Conversational AI</span>
 <span class="connector">│   └──</span> <span class="leaf">Deepfake Audio Detection</span>
 <span class="connector">│</span>
 <span class="connector">└──</span> <span class="branch-label">Music &amp; Audio Signal Processing</span>
 <span class="connector">    ├──</span> <span class="leaf">Music Source Separation</span>
-<span class="connector">    ├──</span> <span class="leaf">Spatial Audio</span>
+<span class="connector">    ├──</span> <span class="leaf">Music Similarity &amp; Visualization</span>
+<span class="connector">    ├──</span> <span class="leaf">Music Information Retrieval</span>
 <span class="connector">    └──</span> <span class="leaf">Room Acoustics</span></div>
     </div>
     <p style="font-size:14px; color:var(--muted); max-width:620px; line-height:1.8;">
-      I'm fascinated by how audio signals carry meaning — whether in human speech, music, or physical spaces.
-      My work spans speech enhancement, source separation, microphone array processing, deepfake audio detection,
-      and acoustic modelling of enclosed environments.
+      I'm fascinated by how audio signals carry meaning, whether in human speech, music, or physical spaces.
+      My work spans speech enhancement and test-time adaptation, source separation, music similarity and analysis,
+      microphone array processing, deepfake audio detection, and acoustic modelling of enclosed environments.
     </p>
   </div>
 </section>
 
-<!-- CURRENT RESEARCH -->
+<!-- RESEARCH PROJECT -->
 <section id="current-research">
   <div class="container">
     <p class="section-label">// 02</p>
-    <h2>Current research project</h2>
+    <h2>Research project</h2>
     <div class="project-card" style="border: 1px solid var(--border); margin-bottom: 1.5rem;">
       <div class="project-header">
         <span class="project-title">Universal Test-Time Adaptation for Speech Enhancement</span>
-        <span class="project-year">Dec 2025 — Aug 2026</span>
+        <span class="project-year">Dec 2025 - Aug 2026</span>
       </div>
       <p class="project-desc" style="margin-bottom:0.6rem;">
-        Institute of Signal Processing and System Theory (ISS), University of Stuttgart<br>
-        Supervisor: Tobias Raichle &nbsp;|&nbsp; Examiner: Prof. Dr.-Ing. Bin Yang
+        Institute for Natural Language Processing (IMS) in collaboration with Signal Processing and System Theory (ISS), University of Stuttgart<br>
+        Supervisor: Tobias Raichle &nbsp;|&nbsp; Examiner: Dr. Wolfgang Wokurek (IMS, Digital Phonetics)
       </p>
       <div class="tag-row">
-        <span class="tag">CMGAN</span><span class="tag">PyTorch</span><span class="tag">Speech Enhancement</span><span class="tag">TTA</span><span class="tag">Deep Learning</span>
+        <span class="tag">CMGAN</span><span class="tag">PyTorch</span><span class="tag">Speech Enhancement</span><span class="tag">TTA</span><span class="tag">Dereverberation</span>
       </div>
       <p class="project-desc">
-        Speech enhancement models work well in controlled settings but struggle when deployed in the real world, where acoustic conditions vary wildly. My research investigates Test-Time Adaptation (TTA), enabling models to adapt on-the-fly to new environments without needing labelled data at inference time.
+        Speech enhancement models work well in controlled settings but struggle when deployed in the real world, where acoustic conditions vary wildly. Test-time adaptation (TTA) lets a model adapt on the fly to new conditions, without labelled data at inference time. This project asked whether TTA methods built for denoising transfer to dereverberation.
       </p>
       <p class="project-desc">
-        I'm extending the CMGAN (Conformer-based Metric GAN) architecture to handle multiple degradation types simultaneously: additive noise, reverberation, and bandwidth limitations. The core challenge is building domain-invariant adaptation strategies, specifically entropy minimisation and mask polarisation, that generalise across unseen acoustic environments without retraining.
+        I trained four CMGAN models (noise-only, reverb-only, and two trained jointly on both) and evaluated four TTA methods, including RIRmixIT, a reverb-specific method developed for the project. The existing methods (MPol, LaDen, RemixIT) all degrade performance on reverberation, because their adaptation assumptions hold for additive noise but not for convolutive distortion. Weight-level analysis showed that updates concentrate in the shared conformer blocks' normalisation statistics, which are only useful for adaptation after joint training.
       </p>
       <p class="project-desc" style="margin-bottom:0;">
-        This sits at the intersection of speech processing and practical ML deployment, which is exactly where I want to work.
+        Central result: adapting a jointly-trained model on one distortion and evaluating on the other, with no adaptation on the second, gives substantially larger gains than adapting directly on the target distortion.
       </p>
     </div>
   </div>
@@ -224,10 +271,22 @@
 
       <div class="project-card">
         <div class="project-header">
-          <span class="project-title">Karaoke Studio — AI-Powered Music Source Separation</span>
+          <span class="project-title">WorldSounds (Team Sundarsheng): Cross-Tradition Music Intelligence</span>
+          <span class="project-year">Jul 2026</span>
+        </div>
+        <p class="project-desc">Built at the MTG Generative Music AI Workshop (Universitat Pompeu Fabra, Barcelona). A knowledge base of Carnatic and Chinese Jingju (Beijing opera) features, covering CREPE pitch tracks, gamaka/meend scores and pentatonic adherence, drives a 2nd-order Markov chain melody generator. The goal was to turn musicological insight about two very different traditions into something a model can generate from.</p>
+        <div class="tag-row">
+          <span class="tag">CREPE</span><span class="tag">Markov Chain</span><span class="tag">Carnatic</span><span class="tag">Jingju</span><span class="tag">Generative Music</span>
+        </div>
+        <a href="https://www.upf.edu/web/mtg/generative-music-ai-workshop" class="gh-link" target="_blank">→ MTG Generative Music AI Workshop</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">Karaoke Studio: AI-Powered Music Source Separation</span>
           <span class="project-year">2026</span>
         </div>
-        <p class="project-desc">Full-stack web app for real-time vocal/instrumental separation using Meta's Demucs v4 (Hybrid Transformer). Pipeline: YouTube URL → yt-dlp → Demucs → synced lyrics in React frontend with dual volume control. Achieves 9.20 dB SDR.</p>
+        <p class="project-desc">Full-stack web app for real-time vocal/instrumental separation using Meta's Demucs v4. Pipeline: YouTube URL, yt-dlp download, Demucs separation, then synced lyrics in a React frontend with dual volume control. Flask backend, 9.20 dB SDR.</p>
         <div class="tag-row">
           <span class="tag">Flask</span><span class="tag">React</span><span class="tag">Demucs</span><span class="tag">yt-dlp</span><span class="tag">Python</span>
         </div>
@@ -248,7 +307,7 @@
 
       <div class="project-card">
         <div class="project-header">
-          <span class="project-title">Music Learning System — DTW &amp; Chromagrams</span>
+          <span class="project-title">Music Learning System: DTW &amp; Chromagrams</span>
           <span class="project-year">2025</span>
         </div>
         <p class="project-desc">System providing objective feedback by algorithmically comparing student and teacher recordings. Uses Chromagrams for melodic analysis and Dynamic Time Warping for rhythmic accuracy measurement.</p>
@@ -282,38 +341,86 @@
 
       <div class="exp-item">
         <div>
-          <p class="exp-org">IMS Digital Phonetics Lab — University of Stuttgart</p>
-          <p class="exp-role">Lab Assistant</p>
-          <p class="exp-desc">Supporting lab operations and audio equipment management.</p>
+          <p class="exp-org"><a href="https://www.visus.uni-stuttgart.de/en" class="org-link" target="_blank" rel="noopener">Visualization Research Center (VISUS)</a>, <a href="https://www.visus.uni-stuttgart.de/en/team/by_working_group/working-group-prof.-sedlmair" class="org-link" target="_blank" rel="noopener">Sedlmair Group</a>, University of Stuttgart</p>
+          <p class="exp-role">Student Assistant</p>
+          <p class="exp-desc">Built ViSuS with Simeon Rau, a rehearsal-recording comparison tool: librosa features (tempo, key, timbre, harmony, rhythm), DTW alignment, MIDI score alignment and pairwise similarity scoring. A FastAPI backend serves two Streamlit clients, a full research view and a plain-language view piloted with a university band, with a similarity matrix, stream graph and MDS recording map.</p>
+          <p class="exp-desc" style="margin-top:0.5rem;"><a href="https://github.com/rustombhesania/Visus_app" class="gh-link" target="_blank">→ View on GitHub</a></p>
         </div>
-        <span class="exp-date">Jan 2025 — Present</span>
+        <span class="exp-date">May 2026 - Sep 2026</span>
       </div>
 
       <div class="exp-item">
         <div>
-          <p class="exp-org">Maitri AI</p>
-          <p class="exp-role">Freelance AI Developer</p>
-          <p class="exp-desc">Built speech-to-text APIs using Whisper and VOSK, implemented voice command task scheduling, and developed a proof of concept for a Carnatic music similarity system.</p>
+          <p class="exp-org"><a href="https://www.ims.uni-stuttgart.de/en/institute/researchgroups/dp/" class="org-link" target="_blank" rel="noopener">IMS Digital Phonetics Lab</a>, University of Stuttgart</p>
+          <p class="exp-role">Student Assistant</p>
+          <p class="exp-desc">Managing professional audio equipment (Yamaha digital mixer, microphones) and the full recording chain. Conducted high-fidelity audio and music data acquisition in a professional studio, creating robust datasets for phonetic and NLP research.</p>
         </div>
-        <span class="exp-date">May 2023 — Jul 2024</span>
+        <span class="exp-date">Apr 2025 - Present</span>
       </div>
 
       <div class="exp-item">
         <div>
-          <p class="exp-org">K.L. University</p>
+          <p class="exp-org"><a href="https://www.kluniversity.in/" class="org-link" target="_blank" rel="noopener">K.L. University</a></p>
           <p class="exp-role">Research Intern</p>
           <p class="exp-desc">Explored and evaluated state-of-the-art ASR toolkits (PyTorch-Kaldi, ESPnet, SpeechBrain). Developed end-to-end ASR systems across English, Hindi, Marathi, and Gujarati.</p>
         </div>
-        <span class="exp-date">Jan 2022 — Apr 2022</span>
+        <span class="exp-date">Jan 2022 - Apr 2022</span>
       </div>
 
       <div class="exp-item">
         <div>
-          <p class="exp-org">IIT Dharwad</p>
+          <p class="exp-org"><a href="https://www.iitdh.ac.in/" class="org-link" target="_blank" rel="noopener">IIT Dharwad</a></p>
           <p class="exp-role">Research Intern</p>
           <p class="exp-desc">Gained deep expertise in ASR using the Kaldi toolkit. Built systems for Assamese, Hindi, and English. Developed a custom Parsi and Gujarati digit recognition database for Kaldi.</p>
         </div>
-        <span class="exp-date">Jul 2021 — Dec 2021</span>
+        <span class="exp-date">Jul 2021 - Dec 2021</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENTREPRENEURSHIP -->
+<section id="entrepreneurship">
+  <div class="container">
+    <p class="section-label">// 05</p>
+    <h2>Entrepreneurship</h2>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">Cyber Valley AI Incubator (Batch 9)</span>
+          <span class="project-year">5 Oct 2026 - 16 Oct 2026</span>
+        </div>
+        <p class="project-desc">Max Planck Institute for Intelligent Systems, Stuttgart. Building Voclair, a local-first speech enhancement toolkit that removes noise and reverberation from microphone audio with very low delay, giving people in a room and AI agents clean speech. It runs on-device with no cloud and ships as an SDK for developers and live sound users. Pitching at Demo Day (16 Oct) to investors and industry experts after workshops and founder mentoring.</p>
+        <div class="tag-row">
+          <span class="tag">Voclair</span><span class="tag">Speech Enhancement</span><span class="tag">On-device</span><span class="tag">SDK</span>
+        </div>
+        <a href="https://ai-incubator.is.mpg.de/ai_incbuator_batch_9" class="gh-link" target="_blank">→ Cyber Valley AI Incubator</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">Corporate Campus Challenge (7th Batch), Campus Founders</span>
+          <span class="project-year">Apr 2026 - Jul 2026</span>
+        </div>
+        <p class="project-desc">Challenge partner: Scheer IMC (imc Learning Suite), Heilbronn. Applied design thinking and the Double Diamond process, with personas and user interviews, to a real challenge from Scheer IMC. Proposed peer-to-peer learning and an AI-driven course recommendation system to improve employee engagement on the LMS, and presented a working prototype to stakeholders at the final demo day.</p>
+        <div class="tag-row">
+          <span class="tag">Design Thinking</span><span class="tag">Double Diamond</span><span class="tag">EdTech</span><span class="tag">Recommendation</span>
+        </div>
+        <a href="https://campusfounders.de/talent/corporate-campus-challenge/" class="gh-link" target="_blank">→ Corporate Campus Challenge</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">AWAKE: From Idea to Startup in a Few Weeks</span>
+          <span class="project-year">Apr 2026 - Jul 2026</span>
+        </div>
+        <p class="project-desc">Entrepreneurship course at the ENI, University of Stuttgart. Applied customer discovery, persona building and value proposition design to a karaoke source-separation pitch, which evolved into an "anywhere karaoke" system: turning two phones into wireless mics paired to a laptop display for instrument-free, real-time scored karaoke. Presented the refined concept and business model at the program's pitch finale.</p>
+        <div class="tag-row">
+          <span class="tag">Customer Discovery</span><span class="tag">Value Proposition</span><span class="tag">Pitching</span>
+        </div>
+        <a href="https://www.eni.uni-stuttgart.de/en/teaching/Courses/FUSQ/awake---become-a-startup-in-six-weeks/" class="gh-link" target="_blank">→ AWAKE at ENI</a>
       </div>
 
     </div>
@@ -323,7 +430,7 @@
 <!-- PERSONAL -->
 <section id="personal">
   <div class="container">
-    <p class="section-label">// 05</p>
+    <p class="section-label">// 06</p>
     <h2>Beyond the work</h2>
     <div class="personal-grid">
       <div class="personal-card">
@@ -353,7 +460,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <p class="section-label">// 06</p>
+    <p class="section-label">// 07</p>
     <h2>Contact</h2>
     <div class="contact-links">
       <div class="contact-item">
@@ -379,7 +486,7 @@
   </div>
 </section>
 
-<footer>Rustom Firdosh Bhesania &mdash; Stuttgart, Germany &mdash; 2026</footer>
+<footer>Rustom Firdosh Bhesania | Stuttgart, Germany | 2026</footer>
 
 </body>
 </html>

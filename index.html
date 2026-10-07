@@ -128,6 +128,48 @@
   .nav-links a { white-space: nowrap; }
   .project-title, .exp-org { overflow-wrap: anywhere; }
   .gh-link { overflow-wrap: anywhere; }
+
+  /* CONNECT */
+  #connect { padding: 5.5rem 0 3rem; min-height: 100vh; min-height: 100dvh; display: flex; align-items: flex-start; }
+  #connect .container { width: 100%; }
+  #connect h2 { margin-bottom: 1.6rem; }
+  .qr-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem; }
+  .qr-card { background: var(--surface); border: 1px solid var(--border); padding: 0.9rem; text-align: center; }
+  .qr-box { background: #fff; padding: 0.6rem; border-radius: 4px; margin-bottom: 0.7rem; }
+  .qr-box .qr { display: block; width: 100%; height: auto; }
+  .qr-name { font-family: var(--mono); font-size: 14px; color: var(--text); letter-spacing: 0.05em; text-transform: uppercase; }
+  .qr-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+  .connect-info { border: 1px solid var(--border); background: var(--surface); margin-bottom: 1.2rem; }
+  .connect-row { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 1rem; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); min-height: 48px; }
+  .connect-row:last-child { border-bottom: none; }
+  .connect-row small { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
+  .connect-row b { font-family: var(--mono); font-weight: 400; font-size: 14px; overflow-wrap: anywhere; text-align: right; }
+  a.connect-row:hover b { color: var(--accent); }
+  .connect-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .connect-actions .btn { text-align: center; min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 0.6rem 0.5rem; }
+  @media (min-width: 700px) {
+    .qr-grid { gap: 1.5rem; }
+    .qr-card { padding: 1.2rem; }
+    .qr-name { font-size: 15px; }
+    .qr-box { max-width: 200px; margin-left: auto; margin-right: auto; margin-bottom: 0.8rem; }
+    #connect { padding-top: 4.2rem; padding-bottom: 1.5rem; }
+    #connect h2 { margin-bottom: 1.2rem; padding-bottom: 0.7rem; }
+    .qr-card { padding: 1rem; }
+    .qr-grid, .connect-info { margin-bottom: 1rem; }
+  }
+  @media (max-width: 600px) {
+    #connect { padding: 4.6rem 0 2rem; }
+    .qr-grid { gap: 0.7rem; }
+    .qr-card { padding: 0.6rem; }
+    .qr-box { padding: 0.4rem; margin-bottom: 0.5rem; }
+    .qr-name { font-size: 12px; }
+    .qr-sub { font-size: 10px; }
+    .connect-row { padding: 0.55rem 0.8rem; min-height: 44px; }
+    .connect-row b { font-size: 13px; }
+    .connect-actions { gap: 0.7rem; }
+    .connect-actions .btn { font-size: 11px; letter-spacing: 0.05em; }
+  }
+
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
   @media (max-width: 900px) {
@@ -182,6 +224,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#entrepreneurship">Startups</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#connect">Connect</a></li>
   </ul>
 </nav>
 
@@ -486,7 +529,45 @@
   </div>
 </section>
 
+<!-- CONNECT -->
+<section id="connect">
+  <div class="container">
+    <p class="section-label">// 08</p>
+    <h2>Scan to connect</h2>
+    <div class="qr-grid">
+      <div class="qr-card">
+        <div class="qr-box"><svg role="img" class="qr" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" class="segno"><path fill="#fff" d="M0 0h37v37h-37z"/><path class="qrline" stroke="#0d0d0d" d="M2 2.5h7m2 0h4m1 0h3m1 0h2m2 0h2m2 0h7m-33 1h1m5 0h1m3 0h1m1 0h1m2 0h3m2 0h1m2 0h2m1 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m2 0h3m2 0h4m4 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m4 0h1m1 0h1m1 0h1m1 0h1m4 0h1m3 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m5 0h1m3 0h1m2 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h2m1 0h1m8 0h3m3 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-24 1h3m5 0h5m1 0h2m-25 1h1m2 0h1m1 0h2m1 0h3m2 0h4m1 0h2m1 0h1m1 0h3m1 0h1m-28 1h1m1 0h2m1 0h1m1 0h1m4 0h1m3 0h1m3 0h1m3 0h4m4 0h1m-29 1h1m1 0h1m1 0h2m1 0h2m3 0h2m1 0h4m1 0h1m2 0h2m1 0h1m1 0h1m-26 1h1m2 0h2m2 0h4m3 0h2m1 0h1m1 0h1m1 0h2m-30 1h1m2 0h1m1 0h5m1 0h1m7 0h3m4 0h1m2 0h1m1 0h1m-32 1h3m1 0h1m3 0h3m2 0h1m1 0h2m4 0h2m1 0h1m1 0h1m1 0h2m1 0h2m-33 1h1m1 0h1m1 0h1m1 0h3m1 0h1m1 0h3m6 0h7m1 0h1m1 0h1m-30 1h2m1 0h1m8 0h2m1 0h1m1 0h1m1 0h1m4 0h1m1 0h1m2 0h1m-31 1h1m1 0h1m2 0h2m3 0h4m1 0h2m1 0h4m3 0h1m1 0h2m1 0h1m-32 1h2m1 0h2m2 0h2m4 0h2m1 0h1m6 0h2m2 0h1m1 0h1m1 0h1m-32 1h3m2 0h5m1 0h4m1 0h1m1 0h1m6 0h1m4 0h1m1 0h1m-31 1h1m1 0h2m1 0h1m3 0h1m3 0h4m2 0h2m2 0h1m1 0h1m3 0h2m-33 1h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h4m2 0h1m1 0h1m1 0h1m5 0h2m-31 1h2m1 0h1m5 0h2m1 0h6m4 0h1m1 0h1m4 0h2m-33 1h2m2 0h1m1 0h4m2 0h4m1 0h1m1 0h1m5 0h2m2 0h2m1 0h1m-32 1h1m1 0h2m2 0h2m1 0h5m1 0h1m1 0h1m2 0h1m1 0h3m3 0h1m1 0h1m-32 1h1m3 0h1m1 0h1m2 0h1m1 0h3m1 0h3m1 0h3m1 0h7m2 0h1m-25 1h4m7 0h2m1 0h1m1 0h1m3 0h2m2 0h1m-33 1h7m2 0h3m1 0h2m1 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h4m-32 1h1m5 0h1m1 0h3m1 0h2m1 0h2m4 0h2m1 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m2 0h4m1 0h6m1 0h1m-32 1h1m1 0h3m1 0h1m1 0h1m3 0h1m2 0h1m1 0h1m2 0h2m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m4 0h1m3 0h1m4 0h3m2 0h2m2 0h1m-33 1h1m5 0h1m6 0h9m1 0h2m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m4 0h3m2 0h1m3 0h1m2 0h1"/></svg></div>
+        <p class="qr-name">Portfolio</p>
+        <p class="qr-sub">rustombhesania.github.io/rustom-portfolio</p>
+      </div>
+      <div class="qr-card">
+        <div class="qr-box"><svg role="img" class="qr" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 41" class="segno"><path fill="#fff" d="M0 0h41v41h-41z"/><path class="qrline" stroke="#0d0d0d" d="M2 2.5h7m9 0h1m1 0h1m1 0h1m1 0h2m1 0h1m2 0h1m1 0h7m-37 1h1m5 0h1m2 0h6m2 0h3m1 0h1m2 0h1m2 0h1m2 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h4m1 0h6m6 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h3m1 0h2m1 0h3m1 0h2m1 0h6m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h2m4 0h1m1 0h1m2 0h5m4 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h1m3 0h1m1 0h3m1 0h1m1 0h2m4 0h2m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h1m1 0h2m1 0h4m2 0h3m1 0h1m2 0h1m-27 1h1m1 0h5m2 0h1m2 0h3m3 0h3m1 0h1m1 0h5m1 0h5m-34 1h1m1 0h2m3 0h1m2 0h1m2 0h3m4 0h1m1 0h2m1 0h1m1 0h2m1 0h1m3 0h1m-36 1h3m1 0h3m1 0h2m1 0h2m1 0h1m5 0h3m1 0h1m1 0h3m1 0h1m1 0h5m-35 1h2m5 0h2m1 0h1m3 0h1m4 0h1m1 0h1m2 0h1m1 0h1m7 0h1m-36 1h1m2 0h3m1 0h1m3 0h1m1 0h1m2 0h1m4 0h1m1 0h3m2 0h8m-33 1h2m1 0h5m4 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h2m1 0h1m-29 1h4m1 0h1m4 0h1m1 0h1m1 0h1m2 0h3m1 0h2m1 0h7m1 0h2m-37 1h1m1 0h1m1 0h2m4 0h1m1 0h2m1 0h1m1 0h5m1 0h1m2 0h7m3 0h1m-37 1h2m1 0h1m1 0h2m1 0h2m1 0h6m2 0h1m2 0h2m1 0h2m1 0h4m2 0h3m-37 1h1m1 0h1m1 0h1m2 0h4m1 0h1m2 0h1m2 0h1m1 0h1m2 0h2m1 0h4m1 0h1m2 0h2m-36 1h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h5m1 0h1m2 0h2m1 0h6m1 0h3m-36 1h4m3 0h2m2 0h4m3 0h3m1 0h2m1 0h7m3 0h1m-35 1h3m1 0h2m1 0h1m1 0h1m3 0h3m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-34 1h4m2 0h3m4 0h1m1 0h1m2 0h6m3 0h2m3 0h1m1 0h1m-34 1h1m1 0h4m2 0h2m2 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h4m1 0h2m-35 1h2m7 0h2m1 0h3m4 0h1m2 0h1m1 0h1m1 0h2m1 0h2m-31 1h1m3 0h3m1 0h1m1 0h1m1 0h1m3 0h4m3 0h2m2 0h2m1 0h1m1 0h1m1 0h1m-37 1h1m1 0h2m7 0h1m1 0h4m4 0h1m1 0h2m3 0h2m4 0h1m-35 1h1m3 0h3m1 0h1m5 0h1m5 0h3m4 0h2m1 0h4m1 0h2m-37 1h1m3 0h1m4 0h1m6 0h1m1 0h1m2 0h3m2 0h1m1 0h2m1 0h2m-33 1h1m1 0h1m1 0h7m1 0h1m1 0h1m2 0h1m4 0h5m1 0h9m-29 1h6m3 0h5m1 0h1m1 0h1m1 0h2m3 0h2m1 0h1m-36 1h7m3 0h1m1 0h1m1 0h4m3 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h1m1 0h2m2 0h8m2 0h1m1 0h1m1 0h1m3 0h2m1 0h1m-36 1h1m1 0h3m1 0h1m1 0h1m3 0h2m2 0h1m2 0h1m1 0h1m1 0h1m1 0h8m1 0h2m-36 1h1m1 0h3m1 0h1m1 0h5m2 0h1m1 0h2m1 0h2m3 0h1m1 0h1m1 0h2m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m1 0h1m5 0h2m2 0h1m5 0h2m-37 1h1m5 0h1m2 0h2m1 0h1m2 0h1m3 0h3m5 0h4m1 0h1m3 0h1m-37 1h7m1 0h1m1 0h2m2 0h2m1 0h1m1 0h1m4 0h3m3 0h1m1 0h5"/></svg></div>
+        <p class="qr-name">Resume (PDF)</p>
+        <p class="qr-sub">Rustom_resume_26.pdf</p>
+      </div>
+    </div>
+    <div class="connect-info">
+      <a class="connect-row" href="mailto:rustom.bhesania10@gmail.com"><small>Email</small><b>rustom.bhesania10@gmail.com</b></a>
+      <a class="connect-row" href="tel:+491783036277"><small>Phone (DE)</small><b>+49 178 303 6277</b></a>
+      <a class="connect-row" href="tel:+918097112000"><small>Phone (IN)</small><b>+91 80971 12000</b></a>
+    </div>
+    <div class="connect-actions">
+      <button type="button" class="btn btn-accent" id="save-contact">Save to contacts</button>
+      <a class="btn" href="Rustom_contact_card.png" download>Download card (offline)</a>
+    </div>
+  </div>
+</section>
+
 <footer>Rustom Firdosh Bhesania | Stuttgart, Germany | 2026</footer>
 
+<script>
+  document.getElementById('save-contact').addEventListener('click', function () {
+    var v = "BEGIN:VCARD\r\nVERSION:3.0\r\nN:Bhesania;Rustom Firdosh;;;\r\nFN:Rustom Firdosh Bhesania\r\nTITLE:Audio AI Researcher & Engineer\r\nTEL;TYPE=CELL:+491783036277\r\nTEL;TYPE=CELL:+918097112000\r\nEMAIL:rustom.bhesania10@gmail.com\r\nURL:https://rustombhesania.github.io/rustom-portfolio/\r\nEND:VCARD";
+    var blob = new Blob([v], { type: 'text/vcard' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob); a.download = 'Rustom_Bhesania.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+</script>
 </body>
 </html>

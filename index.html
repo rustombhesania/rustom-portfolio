@@ -122,7 +122,7 @@
 
   footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.05em; }
 
-  section[id] { scroll-margin-top: 60px; }
+  section[id], .project-card[id], .exp-item[id] { scroll-margin-top: 76px; }
   .nav-links { overflow-x: auto; scrollbar-width: none; }
   .nav-links::-webkit-scrollbar { display: none; }
   .nav-links a { white-space: nowrap; }
@@ -141,7 +141,7 @@
     .nav-logo { font-size: 13px; flex-shrink: 0; }
     .nav-links { gap: 1.1rem; min-width: 0; }
     .nav-links a { font-size: 11px; letter-spacing: 0.05em; }
-    section[id] { scroll-margin-top: 54px; }
+    section[id], .project-card[id], .exp-item[id] { scroll-margin-top: 70px; }
     section { padding: 3rem 0; }
     .container { padding: 0 1.25rem; }
     #hero { min-height: auto; padding: 6.5rem 0 3.5rem; }
@@ -269,7 +269,7 @@
     <h2>Projects</h2>
     <div class="project-grid">
 
-      <div class="project-card">
+      <div class="project-card" id="worldsounds">
         <div class="project-header">
           <span class="project-title">WorldSounds (Team Sundarsheng): Cross-Tradition Music Intelligence</span>
           <span class="project-year">Jul 2026</span>
@@ -281,10 +281,10 @@
         <a href="https://www.upf.edu/web/mtg/generative-music-ai-workshop" class="gh-link" target="_blank">→ MTG Generative Music AI Workshop</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="karaoke">
         <div class="project-header">
           <span class="project-title">Karaoke Studio: AI-Powered Music Source Separation</span>
-          <span class="project-year">2026</span>
+          <span class="project-year">Jan 2026</span>
         </div>
         <p class="project-desc">Full-stack web app for real-time vocal/instrumental separation using Meta's Demucs v4. Pipeline: YouTube URL, yt-dlp download, Demucs separation, then synced lyrics in a React frontend with dual volume control. Flask backend, 9.20 dB SDR.</p>
         <div class="tag-row">
@@ -293,10 +293,10 @@
         <a href="https://github.com/rustombhesania/Speech_Analysis_karaoke" class="gh-link" target="_blank">→ View on GitHub</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="deepfake">
         <div class="project-header">
           <span class="project-title">Audio Deepfake Detection</span>
-          <span class="project-year">2025</span>
+          <span class="project-year">May 2025 - Aug 2025</span>
         </div>
         <p class="project-desc">Investigated the ASVspoof 2019 dataset to identify optimal acoustic features for detecting synthetic speech. Presented findings at a poster session detailing feature effectiveness against various TTS generation systems.</p>
         <div class="tag-row">
@@ -305,10 +305,10 @@
         <a href="https://github.com/rustombhesania/Deep-fake-Power-rangers" class="gh-link" target="_blank">→ View on GitHub</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="music-learning">
         <div class="project-header">
           <span class="project-title">Music Learning System: DTW &amp; Chromagrams</span>
-          <span class="project-year">2025</span>
+          <span class="project-year">Jul 2025</span>
         </div>
         <p class="project-desc">System providing objective feedback by algorithmically comparing student and teacher recordings. Uses Chromagrams for melodic analysis and Dynamic Time Warping for rhythmic accuracy measurement.</p>
         <div class="tag-row">
@@ -317,7 +317,7 @@
         <a href="https://github.com/rustombhesania/Music_lms" class="gh-link" target="_blank">→ View on GitHub</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="room-acoustics">
         <div class="project-header">
           <span class="project-title">Room Acoustics Signal Propagation Study</span>
           <span class="project-year">2025</span>
@@ -339,7 +339,7 @@
     <h2>Experience</h2>
     <div class="exp-list">
 
-      <div class="exp-item">
+      <div class="exp-item" id="visus">
         <div>
           <p class="exp-org"><a href="https://www.visus.uni-stuttgart.de/en" class="org-link" target="_blank" rel="noopener">Visualization Research Center (VISUS)</a>, <a href="https://www.visus.uni-stuttgart.de/en/team/by_working_group/working-group-prof.-sedlmair" class="org-link" target="_blank" rel="noopener">Sedlmair Group</a>, University of Stuttgart</p>
           <p class="exp-role">Student Assistant</p>
@@ -387,7 +387,7 @@
     <h2>Entrepreneurship</h2>
     <div class="project-grid">
 
-      <div class="project-card">
+      <div class="project-card" id="cyber-valley">
         <div class="project-header">
           <span class="project-title">Cyber Valley AI Incubator (Batch 9)</span>
           <span class="project-year">5 Oct 2026 - 16 Oct 2026</span>
@@ -399,7 +399,7 @@
         <a href="https://ai-incubator.is.mpg.de/ai_incbuator_batch_9" class="gh-link" target="_blank">→ Cyber Valley AI Incubator</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="ccc">
         <div class="project-header">
           <span class="project-title">Corporate Campus Challenge (7th Batch), Campus Founders</span>
           <span class="project-year">Apr 2026 - Jul 2026</span>
@@ -411,7 +411,7 @@
         <a href="https://campusfounders.de/talent/corporate-campus-challenge/" class="gh-link" target="_blank">→ Corporate Campus Challenge</a>
       </div>
 
-      <div class="project-card">
+      <div class="project-card" id="awake">
         <div class="project-header">
           <span class="project-title">AWAKE: From Idea to Startup in a Few Weeks</span>
           <span class="project-year">Apr 2026 - Jul 2026</span>

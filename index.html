@@ -93,6 +93,23 @@
   .gh-link { font-family: var(--mono); font-size: 15px; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
   .gh-link:hover { border-color: var(--accent); }
 
+
+  /* COURSES */
+  .group-label { font-family: var(--mono); font-size: 13px; color: var(--accent2); letter-spacing: 0.12em; text-transform: uppercase; margin: 2.2rem 0 1rem; }
+  .group-label:first-of-type { margin-top: 0; }
+  .sub { list-style: none; margin: 0 0 1rem 0; }
+  .sub li { font-size: 16px; color: var(--muted); line-height: 1.7; padding-left: 1.2rem; position: relative; }
+  .sub li::before { content: "\203A"; position: absolute; left: 0; color: var(--accent); }
+  .sub li b { color: var(--text); font-weight: 400; }
+  .gh-link + .gh-link { margin-left: 1.2rem; }
+  .more { background: var(--surface); border: 1px solid var(--border); padding: 1.2rem 1.8rem; }
+  .more summary { font-family: var(--mono); font-size: 15px; color: var(--text); cursor: pointer; }
+  .more ul { list-style: none; margin-top: 1rem; }
+  .more li { font-size: 16px; color: var(--muted); line-height: 1.9; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .more li span { font-family: var(--mono); font-size: 14px; }
+  .course-note { font-size: 15px; color: var(--muted); margin-top: 1rem; }
+  @media (max-width: 600px) { .more { padding: 1rem 1.2rem; } .gh-link + .gh-link { margin-left: 0; display: inline-block; margin-top: 0.4rem; } }
+
   /* EXPERIENCE */
   .exp-list { border: 1px solid var(--border); }
   .exp-item { background: var(--surface); padding: 1.6rem 1.8rem; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 1fr auto; gap: 0.5rem 2rem; transition: background 0.2s; }
@@ -219,9 +236,10 @@
   <span class="nav-logo">rb@senpai:~$</span>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
-    <li><a href="#current-research">Thesis</a></li>
+    <li><a href="#current-research">Research Project</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#courses">Courses</a></li>
     <li><a href="#entrepreneurship">Startups</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#connect">Connect</a></li>
@@ -293,14 +311,15 @@
         <span class="tag">CMGAN</span><span class="tag">PyTorch</span><span class="tag">Speech Enhancement</span><span class="tag">TTA</span><span class="tag">Dereverberation</span>
       </div>
       <p class="project-desc">
-        Speech enhancement models work well in controlled settings but struggle when deployed in the real world, where acoustic conditions vary wildly. Test-time adaptation (TTA) lets a model adapt on the fly to new conditions, without labelled data at inference time. This project asked whether TTA methods built for denoising transfer to dereverberation.
+        Speech enhancement models work well in controlled settings but struggle when deployed in the real world, where acoustic conditions vary wildly. Test-time adaptation (TTA) lets a model adapt on the fly to new conditions, without labelled data at inference time. I trained a model on mixed noisy and reverberant speech, then adapted it on one distortion and tested it on the other, to see whether the two share characteristics a model can exploit.
       </p>
       <p class="project-desc">
         I trained four CMGAN models (noise-only, reverb-only, and two trained jointly on both) and evaluated four TTA methods, including RIRmixIT, a reverb-specific method developed for the project. The existing methods (MPol, LaDen, RemixIT) all degrade performance on reverberation, because their adaptation assumptions hold for additive noise but not for convolutive distortion. Weight-level analysis showed that updates concentrate in the shared conformer blocks' normalisation statistics, which are only useful for adaptation after joint training.
       </p>
       <p class="project-desc" style="margin-bottom:0;">
-        Central result: adapting a jointly-trained model on one distortion and evaluating on the other, with no adaptation on the second, gives substantially larger gains than adapting directly on the target distortion.
+        Central result: adapting on one distortion gave larger gains on the other than adapting on it directly. The full numbers are in the report.
       </p>
+      <p class="project-desc" style="margin-top:1.2rem;margin-bottom:0;"><a href="Rustom_Research_Project_Report.pdf" class="gh-link" target="_blank">→ Read the full report (PDF, 50 pages)</a> &nbsp; <a href="#voclair" class="gh-link">→ Led to Voclair</a></p>
     </div>
   </div>
 </section>
@@ -311,6 +330,19 @@
     <p class="section-label">// 03</p>
     <h2>Projects</h2>
     <div class="project-grid">
+
+      <div class="project-card" id="voclair">
+        <div class="project-header">
+          <span class="project-title">Voclair: Privacy-first Speech Enhancement</span>
+          <span class="project-year">Oct 2026 - Current</span>
+        </div>
+        <p class="project-desc">Voclair is built for lecture halls, conference venues and live events, where noise, echo and reverberation spoil speech. It grew out of my research project on how noisy and reverberant speech are linked, and won the Best Pitch Award at the Cyber Valley AI Incubator Demo Day.</p>
+        <p class="project-desc">The live demo has a ready-made sample you can hear with and without noise. You can also upload your own recording: it is denoised and you get the cleaned speech back. Everything runs in JavaScript inside your browser, so no audio is sent to a server and nothing is stored on our side. The audio stays with you, and privacy is the main point of the product. Real-time operation is the next goal.</p>
+        <div class="tag-row">
+          <span class="tag">Speech Enhancement</span><span class="tag">Denoising</span><span class="tag">In-browser</span><span class="tag">Privacy</span>
+        </div>
+        <a href="https://voclair.vercel.app/" class="gh-link" target="_blank">→ Try the live demo</a> &nbsp; <a href="#cyber-valley" class="gh-link">→ Cyber Valley incubator</a>
+      </div>
 
       <div class="project-card" id="worldsounds">
         <div class="project-header">
@@ -333,7 +365,7 @@
         <div class="tag-row">
           <span class="tag">Flask</span><span class="tag">React</span><span class="tag">Demucs</span><span class="tag">yt-dlp</span><span class="tag">Python</span>
         </div>
-        <a href="https://github.com/rustombhesania/Speech_Analysis_karaoke" class="gh-link" target="_blank">→ View on GitHub</a>
+        <a href="https://github.com/rustombhesania/Speech_Analysis_karaoke" class="gh-link" target="_blank">→ View on GitHub</a> &nbsp; <a href="#course-speech-analysis" class="gh-link">→ Built in the Speech Analysis course</a> &nbsp; <a href="#awake" class="gh-link">→ Became the AWAKE pitch demo</a>
       </div>
 
       <div class="project-card" id="deepfake">
@@ -345,7 +377,7 @@
         <div class="tag-row">
           <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">ASVspoof</span><span class="tag">Audio Features</span>
         </div>
-        <a href="https://github.com/rustombhesania/Deep-fake-Power-rangers" class="gh-link" target="_blank">→ View on GitHub</a>
+        <a href="https://github.com/rustombhesania/Deep-fake-Power-rangers" class="gh-link" target="_blank">→ View on GitHub</a> &nbsp; <a href="#course-team-lab" class="gh-link">→ Done in the Team Laboratory</a>
       </div>
 
       <div class="project-card" id="music-learning">
@@ -353,11 +385,18 @@
           <span class="project-title">Music Learning System: DTW &amp; Chromagrams</span>
           <span class="project-year">Jul 2025</span>
         </div>
-        <p class="project-desc">System providing objective feedback by algorithmically comparing student and teacher recordings. Uses Chromagrams for melodic analysis and Dynamic Time Warping for rhythmic accuracy measurement.</p>
+        <p class="project-desc">System providing objective feedback by algorithmically comparing student and teacher recordings. Uses Chromagrams for melodic analysis and Dynamic Time Warping for rhythmic accuracy measurement. I built it in my Speech Signal Processing and Speech Enhancement course, and it led to my ViSuS work at VISUS.</p>
         <div class="tag-row">
           <span class="tag">Python</span><span class="tag">Librosa</span><span class="tag">Chromagrams</span><span class="tag">DTW</span>
         </div>
         <a href="https://github.com/rustombhesania/Music_lms" class="gh-link" target="_blank">→ View on GitHub</a>
+        <a href="#visus" class="gh-link">→ Led to ViSuS</a>
+      </div>
+
+      <div class="project-card" id="awadhi">
+        <div class="project-header"><span class="project-title">Comparative Phonetic Study of Hindi and Awadhi</span><span class="project-year">2025</span></div>
+        <p class="project-desc">Traced key phonetic changes across Hindi and Awadhi within their shared historical context. I did this study in the Experimental Phonetics seminar.</p>
+        <div class="tag-row"><span class="tag">Phonetics</span><span class="tag">Hindi</span><span class="tag">Awadhi</span></div><a href="#course-phonetics" class="gh-link">→ Experimental Phonetics seminar</a>
       </div>
 
       <div class="project-card" id="room-acoustics">
@@ -365,10 +404,11 @@
           <span class="project-title">Room Acoustics Signal Propagation Study</span>
           <span class="project-year">2025</span>
         </div>
-        <p class="project-desc">Investigated room acoustic principles by configuring a hardware-software interface between a ReSpeaker Mic Array 2.0 and Python's pyroomacoustics library to model signal propagation in enclosed spaces.</p>
+        <p class="project-desc">Investigated room acoustic principles by configuring a hardware-software interface between a ReSpeaker Mic Array 2.0 and Python's pyroomacoustics library to model signal propagation in enclosed spaces. I did this in my Speech Signal Processing and Microphone Array Processing course.</p>
         <div class="tag-row">
           <span class="tag">Python</span><span class="tag">pyroomacoustics</span><span class="tag">ReSpeaker</span><span class="tag">Signal Processing</span>
         </div>
+        <a href="#course-signal-processing" class="gh-link">→ From the Microphone Array Processing course</a>
       </div>
 
     </div>
@@ -387,7 +427,7 @@
           <p class="exp-org"><a href="https://www.visus.uni-stuttgart.de/en" class="org-link" target="_blank" rel="noopener">Visualization Research Center (VISUS)</a>, <a href="https://www.visus.uni-stuttgart.de/en/team/by_working_group/working-group-prof.-sedlmair" class="org-link" target="_blank" rel="noopener">Sedlmair Group</a>, University of Stuttgart</p>
           <p class="exp-role">Student Assistant</p>
           <p class="exp-desc">Built ViSuS with Simeon Rau, a rehearsal-recording comparison tool: librosa features (tempo, key, timbre, harmony, rhythm), DTW alignment, MIDI score alignment and pairwise similarity scoring. A FastAPI backend serves two Streamlit clients, a full research view and a plain-language view piloted with a university band, with a similarity matrix, stream graph and MDS recording map.</p>
-          <p class="exp-desc" style="margin-top:0.5rem;"><a href="https://github.com/rustombhesania/Visus_app" class="gh-link" target="_blank">→ View on GitHub</a></p>
+          <p class="exp-desc" style="margin-top:0.5rem;"><a href="https://github.com/rustombhesania/Visus_app" class="gh-link" target="_blank">→ View on GitHub</a> &nbsp; <a href="#music-learning" class="gh-link">→ Builds on my Music Learning System</a></p>
         </div>
         <span class="exp-date">May 2026 - Sep 2026</span>
       </div>
@@ -423,23 +463,80 @@
   </div>
 </section>
 
+<!-- COURSES -->
+<section id="courses">
+  <div class="container">
+    <p class="section-label">// 05</p>
+    <h2>Courses</h2>
+    <p class="about-text" style="margin-bottom:2.5rem;">Speech and audio courses from my M.Sc. in Computational Linguistics at the University of Stuttgart, with the projects they led to. Dates are the month of the exam.</p>
+    <p class="group-label">Speech Processing module · 24 ECTS</p>
+    <div class="project-grid">
+      <div class="project-card" id="course-signal-processing">
+        <div class="project-header"><span class="project-title">Speech Signal Processing and Microphone Array Processing</span><span class="project-year">6 ECTS · Apr 2025</span></div>
+        <p class="project-desc">I did my room acoustics study with pyroomacoustics in this course.</p>
+        <div class="tag-row"><span class="tag">Signal Processing</span><span class="tag">Microphone Arrays</span><span class="tag">pyroomacoustics</span></div><a href="#room-acoustics" class="gh-link">→ Room acoustics study</a>
+      </div>
+      <div class="project-card" id="course-phonetics">
+        <div class="project-header"><span class="project-title">Topics in Phonetics</span><span class="project-year">6 ECTS · Sep 2025</span></div>
+        <p class="project-desc">Two seminars make up this course:</p><p class="project-desc"><ul class="sub"><li><b>Experimental Phonetics</b> seminar: this is where I did my Hindi and Awadhi study.</li><li><b>Advanced Speech Perception</b> seminar</li></ul></p>
+        <div class="tag-row"><span class="tag">Phonetics</span><span class="tag">Speech Perception</span></div><a href="#awadhi" class="gh-link">→ Hindi and Awadhi study</a>
+      </div>
+      <div class="project-card" id="course-speech-enhancement">
+        <div class="project-header"><span class="project-title">Speech Signal Processing and Speech Enhancement</span><span class="project-year">6 ECTS · Oct 2025</span></div>
+        <p class="project-desc">I built my Music Learning System (DTW and chromagrams) in this course. That work led to my ViSuS project at VISUS. The course also led into my research project on test-time adaptation for speech enhancement.</p>
+        <div class="tag-row"><span class="tag">Speech Enhancement</span><span class="tag">DTW</span><span class="tag">Chromagrams</span></div><a href="#music-learning" class="gh-link">→ Music Learning System</a><a href="#visus" class="gh-link">→ ViSuS at VISUS</a><a href="#current-research" class="gh-link">→ Research project</a>
+      </div>
+      <div class="project-card" id="course-speech-analysis">
+        <div class="project-header"><span class="project-title">Speech Analysis</span><span class="project-year">3 ECTS · Mar 2026</span></div>
+        <p class="project-desc">I built Karaoke Studio in this course. It later became the demo for my AWAKE pitch.</p>
+        <div class="tag-row"><span class="tag">Speech Analysis</span><span class="tag">Pitch</span></div><a href="#karaoke" class="gh-link">→ Karaoke Studio</a>
+      </div>
+      <div class="project-card" id="course-voice-privacy">
+        <div class="project-header"><span class="project-title">Voice Privacy</span><span class="project-year">3 ECTS · Jul 2026</span></div>
+        <p class="project-desc">I took this seminar the semester after my deepfake detection project, because that work made me interested in the privacy side of speech.</p>
+        <div class="tag-row"><span class="tag">Voice Privacy</span></div>
+      </div>
+    </div>
+    <p class="group-label">Machine learning</p>
+    <div class="project-grid">
+      <div class="project-card" id="course-deep-learning">
+        <div class="project-header"><span class="project-title">Introduction to Deep Learning for Speech and Text Processing</span><span class="project-year">9 ECTS · Mar 2025</span></div>
+        
+        <div class="tag-row"><span class="tag">Deep Learning</span><span class="tag">Speech</span><span class="tag">NLP</span></div>
+      </div>
+    </div>
+    <p class="group-label">Team laboratory</p>
+    <div class="project-grid">
+      <div class="project-card" id="course-team-lab">
+        <div class="project-header"><span class="project-title">Computational Linguistics Team Laboratory</span><span class="project-year">6 ECTS · Sep 2025</span></div>
+        <p class="project-desc">I did my audio deepfake detection project in this lab course.</p>
+        <div class="tag-row"><span class="tag">Deepfake Detection</span><span class="tag">ASVspoof 2019</span></div><a href="#deepfake" class="gh-link">→ Audio Deepfake Detection</a>
+      </div>
+    </div>
+    <p class="group-label">Other courses</p>
+    <details class="more"><summary>Show other Computational Linguistics courses</summary><ul><li>Seminar Philosophy of Computer Science<span>Jul 2025</span></li><li>Text Technology<span>Aug 2025</span></li><li>Methods in Computational Linguistics<span>Oct 2025</span></li><li>Machine Translation<span>Feb 2026</span></li><li>Topics in Cognitive Science<span>Feb 2026</span></li></ul></details>
+    <p class="course-note">Earlier, in my B.Tech (NMIMS, Mumbai): Digital Signal Processing.</p>
+  </div>
+</section>
+
 <!-- ENTREPRENEURSHIP -->
 <section id="entrepreneurship">
   <div class="container">
-    <p class="section-label">// 05</p>
+    <p class="section-label">// 06</p>
     <h2>Entrepreneurship</h2>
     <div class="project-grid">
 
       <div class="project-card" id="cyber-valley">
         <div class="project-header">
-          <span class="project-title">Cyber Valley AI Incubator (Batch 9)</span>
+          <span class="project-title">Cyber Valley AI Incubator (Batch 9): Best Pitch Award</span>
           <span class="project-year">5 Oct 2026 - 16 Oct 2026</span>
         </div>
-        <p class="project-desc">Max Planck Institute for Intelligent Systems, Stuttgart. Building Voclair, a local-first speech enhancement toolkit that removes noise and reverberation from microphone audio with very low delay, giving people in a room and AI agents clean speech. It runs on-device with no cloud and ships as an SDK for developers and live sound users. Pitching at Demo Day (16 Oct) to investors and industry experts after workshops and founder mentoring.</p>
+        <p class="project-desc">Max Planck Institute for Intelligent Systems, Stuttgart. Co-founded Voclair with Mehryar Lessani and Deepam Maurya and took it through the incubator's workshops and founder mentoring. At Demo Day on 16 Oct, Voclair won the Best Pitch Award and, as one of the winning teams, $10,000 in AWS credits.</p>
         <div class="tag-row">
-          <span class="tag">Voclair</span><span class="tag">Speech Enhancement</span><span class="tag">On-device</span><span class="tag">SDK</span>
+          <span class="tag">Voclair</span><span class="tag">Best Pitch Award</span><span class="tag">Pitching</span><span class="tag">Speech Enhancement</span>
         </div>
-        <a href="https://ai-incubator.is.mpg.de/ai_incbuator_batch_9" class="gh-link" target="_blank">→ Cyber Valley AI Incubator</a>
+        <a href="https://cyber-valley.de/de/news/cyber-valley-ai-incubator-batch-9-culminates-in-demo-day/" class="gh-link" target="_blank">→ Demo Day report</a>
+        &nbsp;&nbsp;<a href="https://ai-incubator.is.mpg.de/ai_incbuator_batch_9" class="gh-link" target="_blank">→ Cyber Valley AI Incubator</a> &nbsp;&nbsp;<a href="#voclair" class="gh-link">→ Voclair</a>
       </div>
 
       <div class="project-card" id="ccc">
@@ -463,7 +560,7 @@
         <div class="tag-row">
           <span class="tag">Customer Discovery</span><span class="tag">Value Proposition</span><span class="tag">Pitching</span>
         </div>
-        <a href="https://www.eni.uni-stuttgart.de/en/teaching/Courses/FUSQ/awake---become-a-startup-in-six-weeks/" class="gh-link" target="_blank">→ AWAKE at ENI</a>
+        <a href="https://www.eni.uni-stuttgart.de/en/teaching/Courses/FUSQ/awake---become-a-startup-in-six-weeks/" class="gh-link" target="_blank">→ AWAKE at ENI</a> &nbsp;&nbsp;<a href="#karaoke" class="gh-link">→ Karaoke Studio</a>
       </div>
 
     </div>
@@ -473,7 +570,7 @@
 <!-- PERSONAL -->
 <section id="personal">
   <div class="container">
-    <p class="section-label">// 06</p>
+    <p class="section-label">// 07</p>
     <h2>Beyond the work</h2>
     <div class="personal-grid">
       <div class="personal-card">
@@ -503,7 +600,7 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="container">
-    <p class="section-label">// 07</p>
+    <p class="section-label">// 08</p>
     <h2>Contact</h2>
     <div class="contact-links">
       <div class="contact-item">
@@ -532,7 +629,7 @@
 <!-- CONNECT -->
 <section id="connect">
   <div class="container">
-    <p class="section-label">// 08</p>
+    <p class="section-label">// 09</p>
     <h2>Scan to connect</h2>
     <div class="qr-grid">
       <div class="qr-card">
